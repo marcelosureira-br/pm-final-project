@@ -1,17 +1,32 @@
-# Hypothesis & Success Metrics
+# Hypothesis & Success Metrics (Module 3)
 
-> **Module 3 · ★ Deliverable 3.** Repo file `03-analytics/hypothesis-and-metrics.md` — part of your submission.
-> Do the lab in the **Module 3 · Exercise Guide** (linked from the Module 3 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It feeds the **Problem, Value & Hypothesis** slide of your Module 6 final deck.
+## Pre-work · Hypothesis check
+- **Role , who you are solving for (from M2):** A high-frequency, long-retention subscriber whose relationship with the platform is habitual — she opens the app by default rather than by decision.
+- **Goal , what this user is ultimately trying to achieve:** To open the app and be watching something worthwhile within a few minutes, without the selection itself becoming the evening's activity.
+- **Friction / moment of misery , the specific pain blocking their goal:** She scrolls for twenty minutes across a 15,000-title catalog, closes the app without playing anything, and watches a DVD instead. The technical substrate under that moment is documented: descriptive search does not function (BUG-1080), leaving browse as the only path; the browse surface is degraded by placeholder thumbnails and a Continue Watching row occupied by finished titles (BUG-1104, BUG-1121); and on older hardware an 11-second cold start is charged before the twenty minutes even begins (BUG-1110). Her churn signal is silent. She has not complained, downgraded, or filed a ticket. Her tenure makes her look healthy in retention data right up until she leaves.
+- **Current workaround , the external tool or manual process they rely on (M2):** Step 1 — Exhaust the in-app path. She opens the app, scrolls for roughly twenty minutes, and closes it without watching anything.
 
-## Finalized product hypothesis
+Step 2 — Abandon the platform entirely. She does not switch to a competitor's app or open YouTube (the pattern Raj describes in UXR-08). She goes back to a DVD
 
-> Based on [qual + quant evidence], I believe that [solving X] for [persona] will result in [outcome], as measured by a [X%] change in [success metric]. I will protect [guardrail metric] and make a go/no-go decision after [decision window].
+Step 3 — Watch something already vetted. A DVD in her possession is, by definition, something she already selected once and presumably liked enough to own. The "workaround" is not really solving tonight's discovery problem — it's opting out of discovery and re-consuming a known quantity.
+- **Problem Hook , your one-sentence framing of the business crisis (M1):** We must solve the risk of losing loyal, high-value viewers by addressing their inability to easily discover quality content within StreamLine’s massive library
+- **Value Proposition , the outcome your initiative promised to deliver (M1):** For viewers who value quality and discovery over sheer content volume, we will provide a premium, highly curated cinema experience that makes exceptional films easy to discover because StreamLine is losing these high-value users to competitors that offer stronger curation and editorial guidance.
 
-## Success metrics
+## Read your data snapshots
+- **Does the funnel data confirm your M2 friction point, or does it tell a different story? Note where the numbers align with the qualitative pain you found and where they diverge.:** It confirms. The top of the funnel is holding, but people are not finding something to start playing, and whey they try, it looks like it is not interesting.
+- **Do the retention patterns align with the workaround your M2 persona used to find content? Note what the Mo. 0→1 drop suggests about the onboarding experience your persona described as frustrating.:** Yes, it aligns. It confirms that the onboard experience is not ideal. Like mentioned, churn signal is silent. Users has not complained, downgraded, or filed a ticket. They just move to the workaround.
+- **Does the LTV gap and the content mix (61% trending for Wanderers) confirm the moment of misery your persona described? Note which segment your persona is in and whether the data confirms their pain.:** Yes. It confirms users are not finding relevant content to watch and it is hard to find something interesting.
+- **Does the low adoption confirm your persona is burdened by tools they don’t use? Note whether the low scheduling adoption (42%) for coordinators matches your M2 moment of misery.:** _(not filled in)_
+- **Does the workflow data match the manual process or hack you documented in M2? Note whether the specific drop-offs or time gaps explain why your persona avoids the digital tool.:** _(not filled in)_
+- **Look at the CSAT heatmap. Which specific cell most directly maps to your persona’s friction? Note how the NPS trend justifies the urgency of your M1 Problem Hook.:** _(not filled in)_
 
-| Metric | Type | Target | Why it matters |
-|---|---|---|---|
-| _North-star_ | | _____ | _____ |
-| _Leading indicator_ | | _____ | _____ |
-| _Guardrail_ | | _____ | _____ |
+## Step 3 · Craft your hypothesis
+- **Qualitative evidence (from M2) , quote the specific friction / moment of misery for your persona:** I open the app, scroll for like twenty minutes, and close it without watching anything. There's 15,000 titles but nothing I actually want. I ended up going back to a DVD
+- **Quantitative evidence (from M3) , name the metric or data point that confirms the pain; cite the number:** In the conversion funnel, 71% of users reach Browse Titles, but only 29% reach Start Playing, meaning the majority of users who begin browsing never press play. The steepest single drop is between Title Detail Page (48%) and Start Playing (29%), a 19-point loss right at the moment of decision, which is exactly where the qualitative evidence places the friction: users reach titles, but can't commit to one.
+- **Persona , role, goal, and the friction you confirmed in the reconciliation steps:** Role: A high-frequency, long-retention subscriber whose relationship with the platform is habitual. She opens the app by default rather than by decision. Goal: To open the app and be watching something worthwhile within a few minutes, without the selection itself becoming the evening's activity. Friction (confirmed in reconciliation): The funnel and retention data confirm this is not just a qualitative impression. Users are reaching the app but not finding something to play, the Mo. 0→1 drop reflects the same onboarding/discovery frustration, and the churn signal stays silent because users don't complain or downgrade, they just move to the workaround.
+- **Problem you are solving , one sentence describing the specific friction this initiative removes:** Long-tenured, high-frequency viewers cannot convert the catalog's scale into a decision within a few minutes
+- **Strategic outcome , what behaviour change do you expect, and how does it map to retention / revenue / churn?:** We expect curated, mood-based discovery to shorten the path from app-open to play-start for this segment.
+- **Primary success metric (initiative signal) , the leading indicator that tells you the gap is closing:** If it works, that should show up as improved browse-to-play conversion and a smaller Mo. 0→1 retention drop
+- **Guardrail metric (product signal) , the metric that must NOT drop; it protects your existing base:** Catalog-wide browse diversity and amount of onboarding users.
+- **Decision window , how much time or data before you scale, pivot, or kill? minimum threshold to proceed?:** A test cohort of long-tenured, high-frequency viewers exposed to curated discovery, evaluated over a period long enough to capture one full Mo. 0→1 cycle
+- **Draft your full hypothesis sentence , one to three sentences; quote the metric, name the persona, name the outcome:** Based on the moment of misery "I open the app, scroll for like twenty minutes, and close it without watching anything" and funnel data showing only 29% of users who reach Browse Titles ever Start Playing, with the steepest drop (48% → 29%) occurring right at the Title Detail Page decision point, I believe that solving the inability of high-frequency viewers to convert the catalog's scale into a decision within a few minutes will result in a shorter path from app-open to play-start for this segment, as measured by improved browse-to-play conversion and a smaller Mo. 0→1 retention drop. I will protect catalog-wide browse diversity and the amount of onboarding users, and will make a go/no-go decision after a test cohort of long-tenured, high-frequency viewers exposed to curated discovery has been evaluated over a period long enough to capture one full Mo. 0→1 cycle.
