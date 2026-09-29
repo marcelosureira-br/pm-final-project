@@ -1,25 +1,31 @@
-# Experimentation Plan
+# Experimentation Plan (Module 5)
 
-> **Module 5 · ★ Deliverable 5.** Repo file `05-experimentation/experimentation-plan.md` — part of your submission.
-> Do the lab in the **Module 5 · Exercise Guide** (linked from the Module 5 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It becomes the **Experimentation Plan** slide of your Module 6 final deck.
+## Get your documents ready
+- **From M3, your hypothesis sentence:** Based on the moment of misery "I open the app, scroll for like twenty minutes, and close it without watching anything" and funnel data showing only 29% of users who reach Browse Titles ever Start Playing, with the steepest drop (48% → 29%) occurring right at the Title Detail Page decision point, I believe that solving the inability of high-frequency viewers to convert the catalog's scale into a decision within a few minutes will result in a shorter path from app-open to play-start for this segment, as measured by improved browse-to-play conversion and a smaller Mo. 0→1 retention drop. I will protect catalog-wide browse diversity and the amount of onboarding users, and will make a go/no-go decision after a test cohort of long-tenured, high-frequency viewers exposed to curated discovery has been evaluated over a period long enough to capture one full Mo. 0→1 cycle.
+- **From M3, your primary success metric & guardrail metric:** If it works, that should show up as improved browse-to-play conversion and a smaller Mo. 0→1 retention drop. Guardrail: Catalog-wide browse diversity and amount of onboarding users.
+- **From M4, the feature you scoped in your PRD this is what you're testing:** Spotlight Curated Rail - Hand-picked homepage rail that bypasses the algorithm
 
-## Overview
+## Define your experiment parameters
+- **Feature under test pull from your M4 PRD:** Spotlight Curated Rail - Hand-picked homepage rail that bypasses the algorithm
+- **Persona pull your M2 persona:** A high-frequency, long-tenured subscriber who opens the app by default, not by decision., wants to Be watching something worthwhile within minutes — without the search becoming the evening., blocked by Scrolls 15,000 titles for 20 minutes, closes the app, and reaches for a DVD instead..
+- **Expected outcome the behaviour change you expect, from your M3 hypothesis:** We expect curated, mood-based discovery to shorten the path from app-open to play-start for this segment.
+- **Primary success metric the one number that defines success, from M3:** If it works, that should show up as improved browse-to-play conversion and a smaller Mo. 0→1 retention drop
+- **Baseline rate today's rate of your primary metric, from your M3 data:** In the conversion funnel, 71% of users reach Browse Titles, but only 29% reach Start Playing, meaning the majority of users who begin browsing never press play. The steepest single drop is between Title Detail Page (48%) and Start Playing (29%), a 19-point loss right at the moment of decision, which is exactly where the qualitative evidence places the friction: users reach titles, but can't commit to one.
+- **Guardrail metric & boundary what must not break, and how far it can move before you investigate:** Catalog-wide browse diversity and amount of onboarding users. Onboarding of new users should not drop more than 5%.
+- **Minimum Detectable Effect (MDE) the smallest improvement worth shipping, your floor:** +2 percentage points (11% → 13%). Anything smaller isn’t worth the engineering and maintenance cost, this is the floor.
+- **Sample size per arm use the calculator in the builder, baseline + MDE:** ≈ 6.278 users per arm, from the calculator: baseline 19%, MDE 2 pts, power 80%, significance 5%.
+- **Traffic split & test duration 50/50 standard · cover ≥ 2 weekly cycles:** 50 / 50: StreamLine has the traffic to support an even split and reach significance inside the window. 14 days,
+- **Significance threshold p < 0.05 is standard, explain any deviation:** p < 0.05 (95% confidence), industry standard, no deviation.
 
-_A high-level validation strategy to test your hypothesis before full-scale development._
+## Define your control and variant
+- **Control (A) the current experience, reference your M2 moment of misery and M3 funnel/workflow data:** The current home screen: a set of algorithmic rows (“Recently played”, “Made for you”, “Popular”) with no editorial framing.  The steepest single drop is between Title Detail Page (48%) and Start Playing (29%), a 19-point loss right at the moment of decision, which is exactly where the qualitative evidence places the friction: users reach titles, but can't commit to one.
+- **Variant (B) your single change, copy the relevant screens & functional requirements from your M4 PRD:** Screen 1: Home (entry point)
+Top nav and the Spotlight rail in position 1 (header "Spotlight" plus a one-line subtitle)
+10 cards, each with 16:9 artwork, title and runtime, in a horizontal scroll
+Below the rail: a Continue Watching row and two generic catalog rows (static, to show the rail sits above the 15,000-title sprawl)
+- **Isolation check, what has NOT changed? list everything identical between arms (app version, recommendation engine, notifications, onboarding). If something changed inadvertently, your test is compromised.:** Recommendation engine logic, the algorithmic rows below the rail, notification settings, onboarding flow, playback engine, and app version are all identical between arms. The only difference an Explorer can perceive is the presence of the Spotlight rail.
 
-_____
-
-## What you're testing
-
-| Element | Detail |
-|---|---|
-| Hypothesis under test | _____ |
-| Experiment design (A/B, etc.) | _____ |
-| Primary metric | _____ |
-| Guardrail metric | _____ |
-| Decision rule (ship / kill / pivot) | _____ |
-
-## Findings & decision _(after running it)_
-
-_____
+## Formalize your hypothesis & shipping criteria
+- **Your hypothesis (filled in):** I believe that Spotlight Curated Rail - Hand-picked homepage rail that bypasses the algorithm for A high-frequency, long-tenured subscriber who opens the app by default, not by decision., wants to Be watching something worthwhile within minutes — without the search becoming the evening., blocked by Scrolls 15,000 titles for 20 minutes, closes the app, and reaches for a DVD instead.. will result in We expect curated, mood-based discovery to shorten the path from app-open to play-start for this segment., as measured by a +2% pts change in If it works, that should show up as improved browse-to-play conversion and a smaller Mo. 0→1 retention drop within 14 days. We will protect Catalog-wide browse diversity and amount of onboarding users. throughout the test.
+- **Your shipping criteria (filled in):** We will SHIP if If it works, that should show up as improved browse-to-play conversion and a smaller Mo. 0→1 retention drop improves by ≥ +2% pts at p < 0.05 (95% confidence), industry standard, no deviation. and Catalog-wide browse diversity and amount of onboarding users. does not reach Onboarding of new users should not drop more than 5%. after 14 days. We will ITERATE if direction is positive but lift is below MDE. We will KILL if the primary metric shows no improvement or moves negatively. The read date is fixed at the end of 14 days, no results reviewed before then.
+- **Hardest parameter to define, and did it change your hypothesis? quick debrief:** It was the guardrail boundaries. Since we still have external things that can influence this metric, and it is not related to this experiment itself.
