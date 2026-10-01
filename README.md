@@ -2,9 +2,9 @@
 
 > Turn an overwhelming home screen into 30-minute listening sessions with a Spotlight rail that tells each Explorer why they will love a title.
 
-**Your Name · Product Management Cohort · Jun 2026** · https://github.com/your-handle/pm-final-project
+**Marcelo Sureira · Product Management Cohort · Jun 2026** · https://github.com/marcelosureira-br/pm-final-project/
 
-Prototype: https://www.figma.com/your-spotlight-prototype
+Prototype: https://spotlight-curated-ra-qxjc.bolt.host/
 
 ---
 
@@ -161,7 +161,7 @@ A7, following the same idea of A1. Recommendations based on some authority.
 ## Prompt-to-prototype sprint
 - **Where did the prototype reveal a gap in my PRD logic? (what I had to update):** NA
 - **My prototype, as a link or a screenshot (publish or share from your tool; in Lovable that is Share → Share Preview, in Bolt Publish → Web. No share URL? Screenshot the working flow):** https://spotlight-curated-ra-qxjc.bolt.host
-- **Prototype:** https://www.figma.com/your-spotlight-prototype
+- **Prototype:** https://spotlight-curated-ra-qxjc.bolt.host/
 
 ### Slide 8 · Validation
 # A/B Experiment Brief, StreamLine (B2C)
