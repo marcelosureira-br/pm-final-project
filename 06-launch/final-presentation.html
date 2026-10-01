@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StreamLine Spotlight, A Personalised Discovery Rail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saans:wght@400;600;700;800;900&family=Antarctican+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07162C;--fg:#fff;--or:#fb923c;--cy:#22d3ee;--tl:#34d399;--bl:#60a5fa;--vi:#a78bfa;--pk:#f472b6;--bd:rgba(251,146,60,.25)}
+*{box-sizing:border-box;margin:0}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font:400 15px/1.5 "Saans",system-ui,-apple-system,"Segoe UI",sans-serif}
+section{min-height:100vh;scroll-snap-align:start;padding:56px 72px 40px 56px;display:flex;flex-direction:column;justify-content:center;gap:18px;position:relative;background:radial-gradient(900px 500px at 90% 0,rgba(251,146,60,.09),transparent 60%)}
+.eb,.mono{font-family:"Antarctican Mono",ui-monospace,Menlo,monospace}
+.eb{text-transform:uppercase;letter-spacing:.12em;color:#fdba74;font-size:12px;font-weight:500}
+h1,h2,h3{font-weight:800;line-height:1.08}
+h1{font-size:clamp(34px,5.2vw,68px);font-weight:900;max-width:16ch}
+h2{font-size:clamp(26px,3.2vw,40px)}
+h3{font-size:15px;font-weight:700}
+p,li{opacity:.9}
+.card{border:1px solid var(--bd);border-radius:15px;padding:16px 18px;background:rgba(255,255,255,.03)}
+.hero{background:linear-gradient(145deg,rgba(251,146,60,.16),rgba(34,211,238,.07));box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.l{font:500 11px "Antarctican Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--c,#fdba74);display:block;margin-bottom:6px}
+.sm{font-size:13px}.xs{font-size:12px}
+.call{border-left:4px solid var(--or);border-radius:0 15px 15px 0;padding:14px 18px;background:rgba(251,146,60,.1);font-size:14px}
+.pill{display:inline-block;border:1px solid var(--bd);border-radius:99px;padding:5px 14px;font:500 12px "Antarctican Mono",monospace;margin:0 6px 6px 0;background:rgba(251,146,60,.08)}
+.btn{display:inline-block;background:var(--or);color:#07162C;font-weight:800;border-radius:12px;padding:12px 22px;text-decoration:none;box-shadow:0 8px 24px rgba(251,146,60,.35)}
+.btn.o{background:transparent;color:var(--fg);border:1px solid var(--or);box-shadow:none}
+a{color:var(--cy)}
+.stat{font:500 26px "Antarctican Mono",monospace;color:var(--or)}
+.mis{border-color:var(--pk);background:rgba(244,114,182,.12);box-shadow:0 10px 30px rgba(244,114,182,.2)}
+table{border-collapse:collapse;width:100%;font-size:12px}td{padding:5px 8px;border-bottom:1px solid rgba(255,255,255,.1);vertical-align:top}td:first-child{font-family:"Antarctican Mono",monospace;color:#fdba74;width:30%}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cols ul{padding-left:16px;font-size:12.5px}
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--or),var(--pk));z-index:9}
+#dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:9}
+#dots a{width:10px;height:10px;border-radius:50%;border:1px solid var(--or);display:block}#dots a.on{background:var(--or)}
+@media(max-width:860px){section{padding:40px 36px 32px 20px}.g2,.g3,.g4,.cols{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<div id="bar"></div><nav id="dots" aria-label="Slides"></nav>
+
+<section id="s1">
+<span class="eb">Product School · PM Certification · Final Project</span>
+<h1>StreamLine Spotlight, A Personalised Discovery Rail</h1>
+<p style="font-size:19px;max-width:60ch">Turn an overwhelming home screen into 30-minute listening sessions with a Spotlight rail that tells each Explorer why they will love a title.</p>
+<div class="card hero" style="max-width:640px"><span class="l">Presented by</span><b>Marcelo Sureira · Product Management Cohort · Jun 2026</b>
+<p class="sm mono" style="margin-top:10px">Repo: <a href="https://github.com/marcelosureira-br/pm-final-project/">https://github.com/marcelosureira-br/pm-final-project/</a></p>
+<p class="sm mono">Prototype: <a href="https://spotlight-curated-ra-qxjc.bolt.host/">https://spotlight-curated-ra-qxjc.bolt.host/</a></p></div>
+</section>
+
+<section id="s2">
+<span class="eb">Slide 5 · Strategy</span><h2>Problem hook &amp; value proposition</h2>
+<div class="g2">
+<div class="card hero"><span class="l">Problem hook</span><p>We must solve the risk of losing loyal, high-value viewers by addressing their inability to easily discover quality content within StreamLine’s massive library.</p></div>
+<div class="card mis"><span class="l" style="--c:var(--pk)">Moment of misery</span><p>The user is forced to browse large volumes of generic or irrelevant titles, or turn to external sources, to find high-quality films worth watching.</p></div>
+<div class="card"><span class="l">Strategic crisis</span><p class="sm">If we do nothing for 12 months, StreamLine keeps losing high-value viewers to curated competitors, weakening retention and eroding its position as a trusted destination for quality discovery.</p></div>
+<div class="card"><span class="l" style="--c:var(--cy)">Value proposition</span><p class="sm">Spotlight reframes discovery from endless scrolling into a curated, reasoned shortlist, six titles, each with a one-line “why you will love this” so the choice feels effortless.</p></div></div>
+<div class="call"><span class="l">Data-backed hypothesis · Optimizing the existing</span>
+71% of users reach Browse Titles but only 29% reach Start Playing. The steepest drop is Title Detail Page (48%) → Start Playing (29%), a <b>19-point loss</b> at the moment of decision. We expect curated, mood-based discovery to shorten the path from app-open to play-start for long-tenured, high-frequency viewers, measured by browse-to-play conversion and a smaller Mo. 0→1 retention drop. Guardrail: catalog-wide browse diversity and new-user onboarding.
+<p class="xs" style="margin-top:6px">“I open the app, scroll for like twenty minutes, and close it without watching anything. There’s 15,000 titles but nothing I actually want.” (M2)</p></div>
+</section>
+
+<section id="s3">
+<span class="eb">Slide 6 · Research</span><h2>Competitive analysis &amp; the moment of misery</h2>
+<div class="g2">
+<div class="card"><span class="l">Current workaround (status quo to beat)</span>
+<p class="sm"><b>1. Exhaust the in-app path:</b> scrolls ~20 minutes, closes the app. <b>2. Abandon the platform:</b> no competitor, no YouTube, she goes back to a DVD. <b>3. Watch something already vetted:</b> opting out of discovery, re-consuming a known quantity.</p>
+<p class="xs" style="margin-top:8px">UXR-01 · Priya, 34, heavy viewer (14 yrs)</p></div>
+<div class="g3" style="grid-template-columns:1fr">
+<div class="card" style="padding:10px 14px"><span class="l" style="--c:var(--cy)">Minutes, not an evening</span><p class="xs">A curated shortlist replaces a 20-minute scroll plus the walk to the shelf.</p></div>
+<div class="card" style="padding:10px 14px"><span class="l" style="--c:var(--tl)">Scale stays usable</span><p class="xs">All 15,000 titles remain real options, not the few dozen discs she already owns.</p></div>
+<div class="card" style="padding:10px 14px"><span class="l" style="--c:var(--vi)">Loyalty becomes visible</span><p class="xs">A DVD leaves no trace; a completed, curated session does, turning silent churn risk into a signal.</p></div></div></div>
+<span class="l" style="margin:4px 0 0">Future-state journey · Spotlight inserts a reasoned shortlist at the hesitation point, before the user gives up</span>
+<div class="g4">
+<div class="card"><span class="l" style="--c:var(--bl)">Signal</span><p class="xs">Names tonight’s mood instead of scrolling. Fixes: descriptive search (BUG-1080).</p></div>
+<div class="card"><span class="l" style="--c:var(--cy)">The Editor’s Pick</span><p class="xs">Short shelf, one-line rationale. Fixes: franchise-repeat recs (BUG-1091).</p></div>
+<div class="card"><span class="l" style="--c:var(--tl)">The Terminal Yes</span><p class="xs">Picks a title; the choice is settled. Fixes: scroll with no end (BUG-1104, 1121).</p></div>
+<div class="card"><span class="l" style="--c:var(--vi)">The Kept Evening</span><p class="xs">Finishes satisfied, returns by habit. Fixes: silent churn risk.</p></div></div>
+<div class="card mis"><span class="l" style="--c:var(--pk)">Moment of misery · today</span><p class="sm">Open app → scan three generic rows → <b>hesitate</b> → bounce. Her churn signal is silent: no complaint, no downgrade, no ticket.</p></div>
+</section>
+
+<section id="s4">
+<span class="eb">Slide 7 · Blueprint</span><h2>Roadmap, PRD &amp; prototype</h2>
+<div class="cols">
+<div class="card hero"><span class="l" style="--c:var(--or)">Now · this sprint</span><ul><li>A1 Spotlight Curated Rail</li><li>A7 Curator Profiles (overridden from 2-3 Time Sinker to 4-2: curator authority, low tech effort)</li></ul></div>
+<div class="card"><span class="l" style="--c:var(--cy)">Next</span><p class="xs">Per-region / per-locale lists, demoted from Must: not needed for the MVP.</p></div>
+<div class="card"><span class="l" style="--c:var(--pk)">Cut · the “no”</span><p class="xs">A2, A4, A8, A9, A10: not tied to the moment of misery or the metrics.</p></div></div>
+<div class="card"><span class="l">PRD highlights · Spotlight Curated Rail, hand-picked rail that bypasses the algorithm</span>
+<div class="g2"><ul class="xs" style="padding-left:16px"><li>Position 1 or 2 on home, visible without scrolling</li><li>~10 editor-picked titles, ranked by no algorithm</li><li>Config-driven: editors change it without an app release</li><li>Hard artwork gate: no placeholder thumbnails (BUG-1121)</li></ul>
+<ul class="xs" style="padding-left:16px"><li>Suppress finished titles; hide rail if fewer than 5 eligible</li><li>One-action path to play from each card</li><li>Loads with the home payload, no blocking call</li><li>Named editor and first list ready by day 5</li></ul></div>
+<p class="xs" style="margin-top:6px"><b>Made explicit:</b> a vague brief would ship placeholder thumbnails and already-finished titles in the most prominent spot on screen.</p></div>
+<div><a class="btn" href="https://spotlight-curated-ra-qxjc.bolt.host/">View prototype</a> <a class="btn o" href="https://github.com/marcelosureira-br/pm-final-project/blob/main/04-roadmap/roadmap.png">Roadmap screenshot</a></div>
+</section>
+
+<section id="s5">
+<span class="eb">Slide 8 · Validation</span><h2>A/B experiment plan</h2>
+<div class="call"><b>Hypothesis:</b> Spotlight Curated Rail will shorten the path from app-open to play-start for the high-frequency, long-tenured subscriber, measured by a +2% pts change in browse-to-play conversion within 14 days, while protecting browse diversity and onboarding.</div>
+<div class="g2">
+<div class="card"><span class="l" style="--c:var(--cy)">Control (A)</span><p class="xs">Current home: algorithmic rows (“Recently played”, “Made for you”, “Popular”), no editorial framing.</p>
+<span class="l" style="--c:var(--or);margin-top:10px">Variant (B)</span><p class="xs">Spotlight rail in position 1 (header + one-line subtitle), 10 cards with 16:9 artwork, title and runtime; Continue Watching and two catalog rows below.</p>
+<p class="xs" style="margin-top:8px"><b>Held constant:</b> recommendation engine, algorithmic rows, notifications, onboarding, playback, app version.</p></div>
+<div class="card hero"><table>
+<tr><td>Primary metric</td><td>Browse-to-play conversion; smaller Mo. 0→1 retention drop</td></tr>
+<tr><td>Baseline</td><td>71% Browse → 29% Play; 48% Detail → 29% Play</td></tr>
+<tr><td>MDE</td><td>+2% pts</td></tr>
+<tr><td>Guardrail</td><td>Browse diversity; new-user onboarding must not drop more than 5%</td></tr>
+<tr><td>Sample / arm</td><td>6.278 · 50/50 split · 14 days</td></tr>
+<tr><td>Significance</td><td>p &lt; 0.05 (95% confidence)</td></tr></table></div></div>
+<div class="g3">
+<div class="card" style="border-color:var(--tl)"><span class="l" style="--c:var(--tl)">Ship</span><p class="xs">Primary improves ≥ +2% pts at p &lt; 0.05 and the guardrail holds after 14 days.</p></div>
+<div class="card" style="border-color:var(--or)"><span class="l">Iterate</span><p class="xs">Direction positive but lift below the MDE.</p></div>
+<div class="card" style="border-color:var(--pk)"><span class="l" style="--c:var(--pk)">Kill</span><p class="xs">No improvement or negative movement on the primary metric.</p></div></div>
+<p class="xs">Read date is fixed at day 14; no results reviewed before.</p>
+</section>
+
+<section id="s6">
+<span class="eb">Slide 9 · Launch</span><h2>GTM strategy &amp; success metrics</h2>
+<div class="g2">
+<div class="card hero"><span class="l">Goal</span><p class="sm"><b>Conversion</b>, the one metric the rail exists to move, matching the experiment’s primary metric.</p>
+<span class="l" style="margin-top:8px">Audience</span><p class="xs">Existing users who open ≥3x/week and are active ≥6 months, excluding the new-user onboarding cohort and the 10% holdout.</p>
+<span class="l" style="margin-top:8px">Launch tier</span><p class="xs"><b>S, Minimal.</b> Existing users, no priced feature, $0 media; the “Spotlight” header and subtitle are the announcement.</p>
+<span class="l" style="margin-top:8px">Channels</span><span class="pill">In-product surface</span><span class="pill">Release notes</span><span class="pill">Help Center article</span></div>
+<div class="card"><span class="l" style="--c:var(--cy)">Timeline</span><p class="xs"><b>Phase 1 Beta (weeks 1–3):</b> flag to 90/10, editorial list live, CS one-pager and KB article published first, weekly dashboard checks, decision gate at end of week 3.</p>
+<p class="xs" style="margin-top:6px"><b>Phase 2 Launch (if “ship”):</b> flag to 100%, retire the “gradual rollout” CS answer.</p>
+<p class="xs" style="margin-top:6px"><b>Phase 3 Post-launch:</b> editorial refresh cadence, standing guardrail watch, first real Mo. 0→1 read.</p></div></div>
+<div class="g4">
+<div class="card"><span class="stat">≥ +2pts</span><p class="xs">Browse-to-play, rail arm vs. holdout, p &lt; 0.05</p></div>
+<div class="card"><span class="stat">Detail→Play</span><p class="xs">Rail-originated vs. non-rail sessions</p></div>
+<div class="card"><span class="stat">Time-to-play</span><p class="xs">Median, home-open to play-start, rail vs. control</p></div>
+<div class="card"><span class="stat">Adoption</span><p class="xs">Feature adoption, 30-minute discovery sessions, time-to-first-play</p></div></div>
+<div class="call" style="border-color:var(--pk);background:rgba(244,114,182,.1)"><span class="l" style="--c:var(--pk)">Bad signal</span>Conversion hits target while browse diversity drops beyond 5% vs. control. Also: adoption rises but 7-day retention stays flat, which means novelty, not durable value. Likely decision: hold and iterate; ship to 100% only if diversity holds within the 5% band.</div>
+</section>
+
+<section id="s7">
+<span class="eb">Slide 10 · Story</span><h2>Friction, aha moment &amp; what’s next</h2>
+<div class="g2">
+<div class="card hero"><span class="l">Friction + aha moment</span><p>Writing the one-line “why you will love this” reason forced real clarity on the persona. The aha moment was realising the reason copy, not the algorithm, was the product. The hardest part was resisting the urge to redesign the whole home screen.</p></div>
+<div class="card"><span class="l" style="--c:var(--tl)">Key takeaways / next</span><p>Biggest takeaway: a tight, reasoned shortlist beats a longer list. Next I would close the loop, feed Spotlight engagement back into the taste model and A/B test social-proof badges.</p></div></div>
+</section>
+
+<section id="s8" style="align-items:flex-start">
+<span class="eb">Thank you</span><h1>Thank you.</h1>
+<p class="mono sm">Repo: <a href="https://github.com/marcelosureira-br/pm-final-project/">https://github.com/marcelosureira-br/pm-final-project/</a></p>
+<span class="pill">Product Management Cohort · Jun 2026</span>
+<div class="call" style="border-radius:99px;border:1px solid var(--or)"><b>Submit to the learning platform</b> · commit <span class="mono">06-launch/final-presentation.html</span> and submit the repo link</div>
+</section>
+
+<script>
+const S=[...document.querySelectorAll('section')],bar=document.getElementById('bar'),dots=document.getElementById('dots');
+S.forEach((s,i)=>{const a=document.createElement('a');a.href='#'+s.id;a.title='Slide '+(i+1);dots.appendChild(a)});
+const cur=()=>Math.round(scrollY/innerHeight);
+function upd(){const m=document.documentElement.scrollHeight-innerHeight;bar.style.width=(m>0?scrollY/m*100:0)+'%';[...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur()))}
+const go=i=>S[Math.max(0,Math.min(S.length-1,i))].scrollIntoView({behavior:'smooth'});
+addEventListener('scroll',upd,{passive:true});upd();
+addEventListener('keydown',e=>{const k=e.key;
+if(k==='ArrowDown'||k===' '){e.preventDefault();go(cur()+1)}
+else if(k==='ArrowUp'){e.preventDefault();go(cur()-1)}
+else if(k==='Home'){e.preventDefault();go(0)}
+else if(k==='End'){e.preventDefault();go(S.length-1)}
+else if(k==='Escape'){go(0)}});
+</script></body></html>
